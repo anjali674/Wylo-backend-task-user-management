@@ -6,20 +6,7 @@ const path = require("path");
 const { open } = require("sqlite");
 const dbPath = path.join(__dirname, "user_details.db");
 let dataBase = null;
-const corsOptions = {
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:3001",
-    "http://localhost:3002",
-    "http://localhost:3003",
-    "http://localhost:3004",
-    "http://localhost:3005",
-  ],
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
-  credentials: true,
-};
-
-server_instance.use(cors(corsOptions));
+server_instance.use(cors());
 server_instance.use(express.json());
 
 const initialize_DataBase_and_Server = async () => {
